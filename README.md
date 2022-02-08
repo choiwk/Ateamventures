@@ -4,12 +4,72 @@
 http://team13-ateamventures.s3-website.ap-northeast-2.amazonaws.com/
 
 ![캡쳐](https://user-images.githubusercontent.com/85682854/153013320-ec2a7f83-6849-44c8-affd-3257a817bb16.png)
+
+<br/>
+
+### 프로젝트 구조도
+
+```html
+.
+├── App.tsx
+├── assets
+│   ├── arrow.png
+│   ├── assets.ts
+│   ├── logo.png
+│   ├── menu.png
+│   ├── refresh.png
+│   └── vector.png
+├── components
+│   ├── Filtering
+│   │   ├── CheckBox.tsx
+│   │   └── Filter.tsx
+│   ├── Header
+│   │   ├── Header.tsx
+│   │   └── Toggle.tsx
+│   ├── Navbar
+│   │   ├── MobileMenu.tsx
+│   │   ├── Navbar.tsx
+│   │   └── styles.scss
+│   ├── Requestcard
+│   │   ├── Badge.tsx
+│   │   ├── Button.tsx
+│   │   ├── RequestCard.tsx
+│   │   ├── RequestCardContainer.tsx
+│   │   └── styles.scss
+│   └── nothing
+│       ├── Nothing.tsx
+│       └── style.scss
+├── index.tsx
+├── react-app-env.d.ts
+├── styles
+│   ├── App.css
+│   ├── Badge.scss
+│   ├── ChatBtn.scss
+│   ├── Filter.scss
+│   ├── Header.scss
+│   ├── Navbar.scss
+│   ├── RequestBtn.scss
+│   ├── RequestCard.scss
+│   ├── Toggle.scss
+│   └── global-style.scss
+└── utils
+    ├── actions.ts
+    ├── axios.ts
+    ├── constants
+    │   ├── filterOption.ts
+    │   ├── material.ts
+    │   └── method.ts
+    └── types.ts
+```
+
 ### :exclamation: 설치방법
 ~~~
 1. npm install
 2. npx json-server db.json
 3. npm start
 ~~~
+
+
 
 ### :clapper: 구현내용
 

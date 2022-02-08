@@ -16,6 +16,7 @@ function CheckBox({ name, setCondition, subCondition }: Props) {
   const { materialCondition, methodCondition, dispatch } = useContext(filteringContext);
   const changeCondition = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
+      console.log(e.target);
       if (!checked) {
         dispatch(setCondition(e.target.value));
       } else {
@@ -32,11 +33,11 @@ function CheckBox({ name, setCondition, subCondition }: Props) {
           <input
             className='method-input'
             type='checkbox'
-            id='method'
+            id={name}
             value={name}
             onChange={changeCondition}
-          ></input>
-          <label htmlFor='method' className='custom-checkbox'>
+          />
+          <label htmlFor={name} className='custom-checkbox'>
             {name}
           </label>
         </div>

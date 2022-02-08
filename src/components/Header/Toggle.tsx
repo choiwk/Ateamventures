@@ -1,3 +1,6 @@
+import React, { useCallback, useState, useContext } from 'react';
+import { filteringContext } from 'App';
+import { setConsult } from 'utils/actions';
 import 'styles/Toggle.scss';
 
 interface Props {
@@ -5,10 +8,12 @@ interface Props {
   setOn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Toggle({on, setOn}: Props) {
-  const toggleBtn = () => {
+function Toggle({ on, setOn }: Props) {
+  const { consultCondition, dispatch } = useContext(filteringContext);
+  const toggleBtn = useCallback(() => {
     setOn(!on);
-  };
+    dispatch(setConsult());
+  }, [consultCondition]);
 
   return (
     <div className='toggle-btn'>

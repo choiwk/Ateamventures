@@ -3,7 +3,7 @@
 ### :house: 배포 URL
 
 
-![캡쳐](https://user-images.githubusercontent.com/85682854/151652365-2d309084-b9ad-492e-94a0-1ae744748efb.png)
+![캡쳐](https://user-images.githubusercontent.com/85682854/153013320-ec2a7f83-6849-44c8-affd-3257a817bb16.png)
 ### :exclamation: 설치방법
 ~~~
 1. npm install

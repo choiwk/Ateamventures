@@ -7,7 +7,7 @@ http://team13-ateamventures.s3-website.ap-northeast-2.amazonaws.com/
 
 <br/>
 
-### 프로젝트 구조도
+### 🏗 프로젝트 구조도
 
 ```html
 .

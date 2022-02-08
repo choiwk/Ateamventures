@@ -1,0 +1,25 @@
+main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .prototype-card {
+    margin: 0 16px 16px 0;
+    padding: 24px 16px;
+    width: 340px;
+    height: 356px;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+
+    .prototype-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+  .prototype-card:hover {
+    border: 1px solid #2196f3;
+    transition: all 0.5s;
+  }
+  .prototype-card:nth-child(3n + 0) {
+    margin-right: 0;
+  }
+}

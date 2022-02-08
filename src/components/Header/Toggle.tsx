@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { filteringContext } from 'App';
 import { setConsult } from 'utils/actions';
 import 'styles/Toggle.scss';
@@ -26,4 +26,4 @@ function Toggle({ on, setOn }: Props) {
   );
 }
 
-export default Toggle;
+export default React.memo(Toggle);

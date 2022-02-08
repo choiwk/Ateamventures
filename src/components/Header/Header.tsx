@@ -1,21 +1,11 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import Filter from 'components/Filtering/Filter';
 import Toggle from 'components/Header/Toggle';
 
 import 'styles/Header.scss';
 
 function Header() {
-  // const [status, setStatus] = useState<Data[]>([]);
   const [on, setOn] = useState<boolean>(false);
-
-  // useEffect(() => {
-  //   axios.get('http://localhost:4000/requests').then((response) => setStatus(response.data));
-  //   if (on) {
-  //     axios.get('http://localhost:4000/requests?status=상담중')
-  //       .then((response) => setStatus(response.data));
-  //   }
-  // }, [on]);
 
   return (
     <div className='header-wrapper'>
@@ -23,13 +13,12 @@ function Header() {
       <p>파트너님에게 딱 맞는 요청서를 찾아보세요.</p>
       <div className='header-function'>
         <div className='header-filter'>
-        <Filter />
-      </div>
-      <div className='header-toggle'>
+          <Filter />
+        </div>
+        <div className='header-toggle'>
           <Toggle on={on} setOn={setOn} />
+        </div>
       </div>
-      </div>
-      
     </div>
   );
 }

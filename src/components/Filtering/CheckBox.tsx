@@ -10,19 +10,23 @@ interface Props {
   name: string;
   setCondition: (condition: string) => setMethodAction | setMaterialAction;
   subCondition: (condition: string) => subMethodAction | subMaterialAction;
+  index: number;
+  checkList: boolean[];
+  check: React.Dispatch<any>;
 }
-function CheckBox({ name, setCondition, subCondition }: Props) {
+function CheckBox({ name, setCondition, subCondition, index, checkList, check }: Props) {
   const [checked, setChecked] = useState(false);
   const { materialCondition, methodCondition, dispatch } = useContext(filteringContext);
   const changeCondition = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(e.target);
-      if (!checked) {
+      if (!checkList[index]) {
         dispatch(setCondition(e.target.value));
       } else {
         dispatch(subCondition(e.target.value));
       }
-      setChecked(!checked);
+      let temp = [...checkList];
+      temp[index] = !temp[index];
+      check(temp);
     },
     [materialCondition, methodCondition]
   );
@@ -35,6 +39,7 @@ function CheckBox({ name, setCondition, subCondition }: Props) {
             type='checkbox'
             id={name}
             value={name}
+            checked={checkList[index]}
             onChange={changeCondition}
           />
           <label htmlFor={name} className='custom-checkbox'>
@@ -46,4 +51,4 @@ function CheckBox({ name, setCondition, subCondition }: Props) {
   );
 }
 
-export default CheckBox;
+export default React.memo(CheckBox);

@@ -1,0 +1,64 @@
+$gutter: 20px;
+
+//! MOBILE -----------------------------------
+$sm-columns: 4;
+$sm-margin: 5px;
+
+.container {
+  margin: 0 auto;
+  padding: 0 $sm-margin;
+  width: 100%;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // .col-sm-1 , .col-md-2 , .col-lg-3
+  // 속성선택자 : ^= 'col-' 로 시작하는 모든 속성을 나타낸다.
+  [class^='col-'] {
+    padding: 0 $gutter / 2;
+  }
+
+  @for $i from 1 through $sm-columns {
+    .col-sm-#{$i} {
+      width: percentage($i / $sm-columns);
+      //? width: $i / $sm-columns * 100%;
+    }
+  }
+
+  //! TABLET -----------------------------------
+
+  $md-columns: 12;
+  $md-margin: 30px;
+  $md-max-container: 960px + $md-margin * 2;
+
+  @include responsive(T) {
+    max-width: $md-max-container;
+    padding: 0 $md-margin;
+
+    @for $i from 1 through $md-columns {
+      .col-md-#{$i} {
+        width: percentage($i / $md-columns);
+        //? width: $i / $md-columns * 100%;
+      }
+    }
+  }
+
+  //! DESKTOP -----------------------------------
+
+  $lg-columns: 12;
+  $lg-unit: 75px;
+  $lg-max-container: ($lg-unit + $gutter) * $lg-columns; //? 1140px
+
+  @include responsive(D) {
+    max-width: $lg-max-container;
+    padding: 0; //? unit의 정확한 값이 있기 때문에 margin(padding)의 값이 필요하지 않다.
+
+    @for $i from 1 through $lg-columns {
+      .col-lg-#{$i} {
+        width: ($lg-unit + $gutter) * $i;
+      }
+    }
+  }
+}

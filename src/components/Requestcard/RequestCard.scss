@@ -8,7 +8,6 @@ main {
     width: 340px;
     height: 356px;
     border: 1px solid #e5e5e5;
-    cursor: pointer;
 
     .prototype-header {
       display: flex;
@@ -36,6 +35,50 @@ main {
     .contour {
       margin-bottom: 32px;
       border: 1px solid #e5e5e5;
+    }
+    .table-container {
+      margin-bottom: 30px;
+      table {
+        th {
+          padding: 0 32px 8px 0;
+          text-align: left;
+          color: #323d45;
+          font-weight: 400;
+        }
+        td {
+          padding-bottom: 8px;
+          font-weight: 700;
+        }
+      }
+    }
+    .btn-container {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      .show-request-btn {
+        margin-right: 8px;
+        width: 108px;
+        height: 32px;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: #2196f3;
+        color: #fff;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+      }
+      .chat-btn {
+        width: 76px;
+        height: 32px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #2196f3;
+        border: 1px solid #2196f3;
+        border-radius: 4px;
+        background-color: #fff;
+        cursor: pointer;
+      }
     }
   }
   .prototype-card:hover {

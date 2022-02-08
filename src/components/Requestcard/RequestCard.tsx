@@ -23,6 +23,36 @@ const RequestCard: FC = () => {
             <time className='due-date'>{card.due}까지 납기</time>
           </div>
           <div className='contour' aria-label='구분선' />
+          <div className='table-container'>
+            <table>
+              <tbody>
+                <tr>
+                  <th>도면개수</th>
+                  <td>{card.count}개</td>
+                </tr>
+                <tr>
+                  <th>총 수량</th>
+                  <td>{card.amount}개</td>
+                </tr>
+                <tr>
+                  <th>가공방식</th>
+                  <td>{card.method}</td>
+                </tr>
+                <tr>
+                  <th>재료</th>
+                  <td>
+                    {card.material.length > 1
+                      ? card.material[0] + ', ' + card.material[1]
+                      : card.material}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <footer className='btn-container'>
+            <button className='show-request-btn'>요청 내역 보기</button>
+            <button className='chat-btn'>채팅하기</button>
+          </footer>
         </div>
       ))}
     </main>

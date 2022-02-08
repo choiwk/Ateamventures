@@ -10,7 +10,6 @@ http://team13-ateamventures.s3-website.ap-northeast-2.amazonaws.com/
 ### 🏗 프로젝트 구조도
 
 ```html
-.
 ├── App.tsx
 ├── assets
 │   ├── arrow.png

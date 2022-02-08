@@ -6,9 +6,9 @@ $grid-px: 400px;
   grid-template-columns: $grid-px $grid-px $grid-px;
   grid-template-rows: $grid-px $grid-px;
   place-items: center;
-  margin: 0 80px;
+  justify-content: center;
   .card {
-    margin: 0px 16px;
+    margin: 0px 8px 8px 0;
     padding: 24px 16px;
     width: 366px;
     height: 356px;
@@ -31,17 +31,14 @@ $grid-px: 400px;
       border: 1px solid $border-color;
       margin-bottom: 32px;
     }
-    span {
-      margin-left: 32px;
-      font-weight: bold;
-    }
+    // span {
+    //   margin-left: 32px;
+    //   font-weight: bold;
+    // }
     .due {
       margin-top: 24px;
       margin-bottom: 10px;
       color: #939fa5;
-    }
-    p {
-      margin-bottom: 8px;
     }
     .btn {
       display: flex;
@@ -54,5 +51,30 @@ $grid-px: 400px;
   }
   .card:hover {
     border: 2px solid #2196f3;
+  }
+}
+
+ul {
+  margin: 28px 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    margin: 4px 0;
+  }
+  div:nth-child(1) {
+    font-family: Noto Sans KR;
+    font-weight: 400;
+    width: 70px;
+    height: 20px;
+  }
+  div:nth-last-child(1) {
+    font-family: Noto Sans KR;
+    font-weight: 700;
+    width: 232px;
+    height: 20px;
   }
 }

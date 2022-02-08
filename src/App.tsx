@@ -1,6 +1,6 @@
 import Header from 'components/Header/Header';
 import Navbar from 'components/Navbar/Navbar';
-import Card from 'components/Requestcard/Card';
+import RequestCardContainer from 'components/Requestcard/RequestCardContainer';
 import 'styles/App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <Navbar />
       <Header />
-      <Card />
+      <RequestCardContainer />
     </>
     
   );

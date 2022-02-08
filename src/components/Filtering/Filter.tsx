@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { filterOption } from 'utils/constants/filterOption';
 import material from 'utils/constants/material';
 import method from 'utils/constants/method';
@@ -10,15 +10,15 @@ function Filter() {
   const [methodClick, setMethodClick] = useState<boolean>(false);
   const [materialClick, setMaterialClick] = useState<boolean>(false);
 
-  const methodHandler = (e: any) => {
+  const methodHandler = (e: React.MouseEvent<HTMLSpanElement>) => {
     setMethodClick(!methodClick);
   }
 
-  const materialHandler = (e: any) => {
+  const materialHandler = (e: React.MouseEvent<HTMLSpanElement>) => {
     setMaterialClick(!materialClick);
   }
 
-  const resetHandler = (e: any) => {
+  const resetHandler = (e: React.MouseEvent<HTMLDivElement>) => {
     setMethodClick(false);
     setMaterialClick(false);
   }

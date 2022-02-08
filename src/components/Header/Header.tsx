@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Data } from 'components/Requestcard/interfaces';
 import Filter from 'components/Filtering/Filter';
 import Toggle from 'components/Header/Toggle';
 
 import 'styles/Header.scss';
 
 function Header() {
-  const [status, setStatus] = useState<Data[]>([]);
+  // const [status, setStatus] = useState<Data[]>([]);
   const [on, setOn] = useState<boolean>(false);
 
-  useEffect(() => {
-    axios.get('http://localhost:4000/requests').then((response) => setStatus(response.data));
-    if (on) {
-      axios.get('http://localhost:4000/requests?status=상담중')
-        .then((response) => setStatus(response.data));
-    }
-  }, [on]);
+  // useEffect(() => {
+  //   axios.get('http://localhost:4000/requests').then((response) => setStatus(response.data));
+  //   if (on) {
+  //     axios.get('http://localhost:4000/requests?status=상담중')
+  //       .then((response) => setStatus(response.data));
+  //   }
+  // }, [on]);
 
   return (
     <div className='header-wrapper'>

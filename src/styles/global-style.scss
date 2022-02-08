@@ -163,6 +163,11 @@ textarea {
   color: var(--color-black);
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 @media only screen and (min-width: 368px) {
   /* PC버전 rem 상대단위 기준점 */
   html {

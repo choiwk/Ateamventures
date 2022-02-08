@@ -1,0 +1,39 @@
+.mobile-menu-container {
+  width: 280px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+  img {
+    width: 91px;
+    height: 12px;
+    filter: invert(51%) sepia(59%) saturate(5125%) hue-rotate(191deg) brightness(108%) contrast(91%);
+  }
+  .logo {
+    border-bottom: 1px solid #e5e5e5;
+    height: 44px;
+    width: 100%;
+    padding: 16px 20px;
+  }
+  .vector {
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    filter: invert(1);
+  }
+  .mobile-link {
+    margin: 36px 0 0 32px;
+  }
+  .mobile-login {
+    margin-top: 26.5px;
+  }
+}
+
+@media screen and (min-width: 361px) {
+  .mobile-menu-container {
+    opacity: 0;
+  }
+}

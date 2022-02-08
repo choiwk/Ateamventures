@@ -1,4 +1,4 @@
-import { useState, useCallback, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import { filteringContext } from 'App';
 
 import { filterOption } from 'utils/constants/filterOption';
@@ -13,20 +13,40 @@ import 'styles/Filter.scss';
 function Filter() {
   const [methodClick, setMethodClick] = useState<boolean>(false);
   const [materialClick, setMaterialClick] = useState<boolean>(false);
+  const [materialChecked, setMaterialChecked] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const [methodChecked, setMethodChecked] = useState<boolean[]>([false, false]);
+
   const { dispatch } = useContext(filteringContext);
-  const methodHandler = (e: React.MouseEvent<HTMLSpanElement>) => {
-    setMethodClick(!methodClick);
-  };
+  const methodHandler = useCallback(
+    (e: React.MouseEvent<HTMLSpanElement>) => {
+      setMethodClick(!methodClick);
+    },
+    [methodClick]
+  );
 
-  const materialHandler = (e: React.MouseEvent<HTMLSpanElement>) => {
-    setMaterialClick(!materialClick);
-  };
+  const materialHandler = useCallback(
+    (e: React.MouseEvent<HTMLSpanElement>) => {
+      setMaterialClick(!materialClick);
+    },
+    [materialClick]
+  );
 
-  const resetHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-    setMethodClick(false);
-    setMaterialClick(false);
-    dispatch(resetCondition());
-  };
+  const resetHandler = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      setMethodClick(false);
+      setMaterialClick(false);
+      setMaterialChecked([false, false, false, false, false]);
+      setMethodChecked([false, false]);
+      dispatch(resetCondition());
+    },
+    [methodClick, materialClick, methodChecked, materialChecked]
+  );
 
   return (
     <div className='btn'>
@@ -39,13 +59,16 @@ function Filter() {
           <img src={Arrow} alt='drop-down-arrow' className='drop-icon'></img>
         </span>
         <ul className={methodClick ? 'method click' : 'method hide'}>
-          {method.map((i: filterOption) => {
+          {method.map((i: filterOption, idx) => {
             return (
               <Checkbox
                 key={i.id}
                 name={i.value}
                 setCondition={setMethod}
                 subCondition={subMethod}
+                index={idx}
+                checkList={methodChecked}
+                check={setMethodChecked}
               />
             );
           })}
@@ -60,13 +83,16 @@ function Filter() {
           <img src={Arrow} alt='drop-down-arrow' className='drop-icon'></img>
         </span>
         <ul className={materialClick ? 'material click' : 'material hide'}>
-          {material.map((i: filterOption) => {
+          {material.map((i: filterOption, idx) => {
             return (
               <Checkbox
                 key={i.id}
                 name={i.value}
                 setCondition={setMaterial}
                 subCondition={subMaterial}
+                index={idx}
+                checkList={materialChecked}
+                check={setMaterialChecked}
               />
             );
           })}
@@ -87,4 +113,4 @@ function Filter() {
   );
 }
 
-export default Filter;
+export default React.memo(Filter);

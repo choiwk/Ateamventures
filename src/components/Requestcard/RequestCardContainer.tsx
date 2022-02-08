@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useCallback, useRef } from 'react';
+import { useEffect, useContext, useCallback, useRef } from 'react';
 import { RequestDB } from 'utils/types';
 import { filteringContext } from 'App';
 import RequestCard from './RequestCard';

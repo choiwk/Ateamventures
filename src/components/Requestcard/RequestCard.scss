@@ -10,9 +10,32 @@ main {
     border: 1px solid #e5e5e5;
     cursor: pointer;
 
-    .prototype-title {
-      font-weight: 600;
-      font-size: 16px;
+    .prototype-header {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      .prototype-title {
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 16px;
+      }
+      .client {
+        margin-bottom: 32px;
+        color: #323d45;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .due-date {
+        margin-bottom: 16px;
+        color: #939fa5;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+    .contour {
+      margin-bottom: 32px;
+      border: 1px solid #e5e5e5;
     }
   }
   .prototype-card:hover {

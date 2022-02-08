@@ -1,7 +1,7 @@
 <h1 align= "center"> Ateamventures CAPA 파트너스 페이지 구현 과제</h1>
 
 ### :house: 배포 URL
-
+http://team13-ateamventures.s3-website.ap-northeast-2.amazonaws.com/
 
 ![캡쳐](https://user-images.githubusercontent.com/85682854/153013320-ec2a7f83-6849-44c8-affd-3257a817bb16.png)
 ### :exclamation: 설치방법

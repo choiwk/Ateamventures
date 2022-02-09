@@ -1,7 +1,8 @@
 import React, { FC, useState, useEffect } from 'react';
 
 import '../Requestcard/RequestCard.scss';
-import { IRequest } from '../../Interfaces';
+import { IRequest } from '../../utils/constants/Interfaces';
+
 const RequestCard: FC = () => {
   const [serverData, setServerData] = useState<IRequest[]>([]);
 
@@ -16,9 +17,12 @@ const RequestCard: FC = () => {
       {serverData.map((card: IRequest, index: number) => (
         <div className='prototype-card' key={index}>
           <div className='prototype-header'>
-            <h2 className='prototype-title' aria-label='시제품 타이틀'>
-              {card.title}
-            </h2>
+            <header>
+              <h2 className='prototype-title' aria-label='시제품 타이틀'>
+                {card.title}
+              </h2>
+              <div className='badge'>{card.status === '상담중' ? card.status : ''}</div>
+            </header>
             <span className='client'>{card.client}</span>
             <time className='due-date'>{card.due}까지 납기</time>
           </div>
@@ -36,15 +40,11 @@ const RequestCard: FC = () => {
                 </tr>
                 <tr>
                   <th>가공방식</th>
-                  <td>{card.method}</td>
+                  <td>{card.method.join(', ')}</td>
                 </tr>
                 <tr>
                   <th>재료</th>
-                  <td>
-                    {card.material.length > 1
-                      ? card.material[0] + ', ' + card.material[1]
-                      : card.material}
-                  </td>
+                  <td>{card.material.join(', ')}</td>
                 </tr>
               </tbody>
             </table>

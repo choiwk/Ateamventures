@@ -14,11 +14,20 @@ main {
       justify-content: space-between;
       flex-direction: column;
 
-      .prototype-title {
-        margin-bottom: 8px;
-        font-weight: 600;
-        font-size: 16px;
+      header {
+        display: flex;
+        justify-content: space-between;
+        .prototype-title {
+          margin-bottom: 8px;
+          font-weight: 600;
+          font-size: 16px;
+        }
+        .badge {
+          font-size: 12px;
+          color: #ffa000;
+        }
       }
+
       .client {
         margin-bottom: 32px;
         color: #323d45;

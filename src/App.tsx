@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Nav />
-      <div className='container'>
+      <div className='container' style={{ padding: '60px 0' }}>
         <div className='row'>
           <div className='col-sm-4'>
             <Header />

@@ -1,17 +1,20 @@
 import React, { FC, useState, useEffect } from 'react';
+import axios from 'axios';
 
 import '../Requestcard/RequestCard.scss';
 import { IRequest } from '../../utils/constants/Interfaces';
 
 const RequestCard: FC = () => {
-  const [serverData, setServerData] = useState<IRequest[]>([]);
+  const [serverData, setServerData] = useState<IRequest[] | any>([]);
 
   useEffect(() => {
+    // const getData = axios.get('http://localhost:3001/requests').then((response) => {});
+
     fetch('http://localhost:3001/requests')
       .then((res) => res.json())
-      .then((json) => setServerData(json));
+      .then((json) => setServerData(json.splice(0, 6)));
   }, []);
-  console.log(serverData);
+
   return (
     <main>
       {serverData.map((card: IRequest, index: number) => (
@@ -40,11 +43,11 @@ const RequestCard: FC = () => {
                 </tr>
                 <tr>
                   <th>가공방식</th>
-                  <td>{card.method.join(', ')}</td>
+                  <td>{card.method}</td>
                 </tr>
                 <tr>
                   <th>재료</th>
-                  <td>{card.material.join(', ')}</td>
+                  <td>{card.material}</td>
                 </tr>
               </tbody>
             </table>
